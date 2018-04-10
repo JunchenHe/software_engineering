@@ -7,13 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
+using System.IO;
+using System.Drawing.Imaging;
+
+
 
 namespace background_manager
 {
     public partial class Form1 : Form
     {
-        protected string connetStr = "server=192.168.52.131;port=3306;user=he;password=123; database=shiyan;";//database 待修改
-
+        protected string connetStr = "server=192.168.52.131;port=3306;user=he;password=123; database=shiyan;";//database 待改
+        protected static string url = "https://www.baidu.com";
 
         public Form1()
         {
@@ -46,6 +52,22 @@ namespace background_manager
             }
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.M);
+            QrCode qrCode = qrEncoder.Encode(url);
+            //保存成png文件
+            string filename = @"D:\WorkBench\url.png";
+            GraphicsRenderer render = new GraphicsRenderer(new FixedModuleSize(5, QuietZoneModules.Two), Brushes.Black, Brushes.White);
+            using (FileStream stream = new FileStream(filename, FileMode.Create))
+            {
+                render.WriteToStream(qrCode.Matrix, ImageFormat.Png, stream);
+            }
+
+            pictureBox1.Image = System.Drawing.Image.FromFile(@"D:\WorkBench\url.png");
+           
         }
     }
 
