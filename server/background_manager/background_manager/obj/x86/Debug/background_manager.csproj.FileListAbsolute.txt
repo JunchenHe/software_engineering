@@ -1,0 +1,9 @@
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\bin\Debug\background_manager.exe
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\bin\Debug\background_manager.pdb
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\bin\Debug\MySql.Data.dll
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\obj\x86\Debug\background_manager.csprojResolveAssemblyReference.cache
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\obj\x86\Debug\background_manager.Form1.resources
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\obj\x86\Debug\background_manager.Properties.Resources.resources
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\obj\x86\Debug\background_manager.csproj.GenerateResource.Cache
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\obj\x86\Debug\background_manager.exe
+D:\计算机_大三下\software_engineering\server\background_manager\background_manager\obj\x86\Debug\background_manager.pdb
