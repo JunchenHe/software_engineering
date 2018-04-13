@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: localhost    Database: softengineer
+-- Host: localhost    Database: data
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.7.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `info`
+-- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `info`;
+DROP TABLE IF EXISTS `message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `info` (
+CREATE TABLE `message` (
   `level` tinyint(4) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `note` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `info`
+-- Dumping data for table `message`
 --
 
-LOCK TABLES `info` WRITE;
-/*!40000 ALTER TABLE `info` DISABLE KEYS */;
-INSERT INTO `info` VALUES (0,'2018-04-08 10:57:53','create datebase'),(1,'2018-04-08 11:10:27','add some note'),(2,'2018-04-08 11:10:43','add note for level 2');
-/*!40000 ALTER TABLE `info` ENABLE KEYS */;
+LOCK TABLES `message` WRITE;
+/*!40000 ALTER TABLE `message` DISABLE KEYS */;
+INSERT INTO `message` VALUES (0,'2018-04-08 10:57:53','create datebase'),(1,'2018-04-08 11:10:27','add some note'),(2,'2018-04-08 11:10:43','add note for level 2');
+/*!40000 ALTER TABLE `message` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE `user` (
   `passwd` varchar(100) NOT NULL,
   `level` tinyint(4) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +64,10 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (1,'he','123',0),(2,'li','123',1),(3,'wang','123',2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'data'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -74,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08 19:13:20
+-- Dump completed on 2018-04-13 14:44:44
