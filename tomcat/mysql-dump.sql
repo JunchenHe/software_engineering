@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `info`
+-- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `info`;
+DROP TABLE IF EXISTS `message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `info` (
+CREATE TABLE `message` (
   `level` tinyint(4) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `note` text
@@ -30,13 +30,13 @@ CREATE TABLE `info` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `info`
+-- Dumping data for table `message`
 --
 
-LOCK TABLES `info` WRITE;
-/*!40000 ALTER TABLE `info` DISABLE KEYS */;
-INSERT INTO `info` VALUES (0,'2018-04-08 10:57:53','create datebase'),(1,'2018-04-08 11:10:27','add some note'),(2,'2018-04-08 11:10:43','add note for level 2');
-/*!40000 ALTER TABLE `info` ENABLE KEYS */;
+LOCK TABLES `message` WRITE;
+/*!40000 ALTER TABLE `message` DISABLE KEYS */;
+INSERT INTO `message` VALUES (0,'2018-04-08 10:57:53','create datebase'),(1,'2018-04-08 11:10:27','add some note'),(2,'2018-04-08 11:10:43','add note for level 2');
+/*!40000 ALTER TABLE `message` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -78,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-13 13:47:17
+-- Dump completed on 2018-04-13 14:44:44
