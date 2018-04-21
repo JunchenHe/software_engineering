@@ -27,7 +27,7 @@ public class JDBCUtil {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/data?useUnicode=true&characterEncoding=UTF-8";
-            connection = DriverManager.getConnection(url,"root","sst123");
+            connection = DriverManager.getConnection(url,"root","toor");
             connected = true;
             return true;
         } catch (ClassNotFoundException e) {
