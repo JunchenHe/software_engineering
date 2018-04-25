@@ -1,5 +1,8 @@
 package com.angine.www.zxingtest;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,6 +17,9 @@ import okhttp3.Request;
  */
 
 public class HttpUtil {
+
+    public static final String ISLOGINED = "islogined";
+    public static final String COOKIE = "cookie";
 
     public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
         new Thread(new Runnable() {
@@ -59,6 +65,17 @@ public class HttpUtil {
                 .url(address)
                 .build();
         client.newCall(request).enqueue(callback);
+    }
+    public static void saveCookiePreference(Context context, String value) {
+        SharedPreferences preference = context.getSharedPreferences(ISLOGINED, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+        editor.putString(COOKIE, value);
+        editor.apply();
+    }
+    public static String getCookiePreference(Context context) {
+        SharedPreferences preference = context.getSharedPreferences(ISLOGINED, Context.MODE_PRIVATE);
+        String s = preference.getString(COOKIE, "");
+        return s;
     }
 
 

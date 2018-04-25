@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     String password;
 
+
+
     @Override
     public void onPanelClosed(int featureId, Menu menu) {
         super.onPanelClosed(featureId, menu);
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                 account = accountEdit.getText().toString();
                 password = passwordEdit.getText().toString();
+
                 sendRequestWithOkHttp();
 
             }
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
+
                     OkHttpClient client = new OkHttpClient();
                     String url = "http://120.79.73.175:8080/login?username=" +account+
                             "&password="+password;
@@ -97,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
-
+                    String cookie = response.header("Set-Cookie");
+                    HttpUtil.saveCookiePreference(MainActivity.this,cookie);
 
 
                     if (!responseData.equals("-1")) {
@@ -117,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
                         Looper.prepare();
-
                         Toast.makeText(MainActivity.this, "帐号或密码错误", Toast.LENGTH_SHORT).show();
                         Looper.loop();
                     }
