@@ -40,7 +40,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(514, 384);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 44);
+            this.button1.Size = new System.Drawing.Size(245, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "连接数据库插入数据";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             // 
             this.listView1.Location = new System.Drawing.Point(371, 32);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(471, 288);
+            this.listView1.Size = new System.Drawing.Size(561, 288);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 542);
+            this.ClientSize = new System.Drawing.Size(968, 542);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);

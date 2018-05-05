@@ -35,6 +35,10 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -49,10 +53,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 28);
+            this.textBox1.Location = new System.Drawing.Point(44, 61);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(663, 270);
+            this.textBox1.Size = new System.Drawing.Size(663, 79);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -60,9 +64,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(51, 329);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 15);
+            this.label1.Size = new System.Drawing.Size(157, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "选择可见级别:";
+            this.label1.Text = "选择输入权限特有信息";
             // 
             // checkBox1
             // 
@@ -73,6 +77,7 @@
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "level 0";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -83,6 +88,7 @@
             this.checkBox2.TabIndex = 4;
             this.checkBox2.Text = "level 1";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -93,6 +99,7 @@
             this.checkBox3.TabIndex = 5;
             this.checkBox3.Text = "level 2";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // label2
             // 
@@ -102,11 +109,50 @@
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 6;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(252, 453);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 15);
+            this.label3.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "输入公共可见信息";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(44, 180);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(663, 107);
+            this.textBox2.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(48, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "发布信息";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 501);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -130,5 +176,9 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
