@@ -18,8 +18,9 @@ namespace background_manager
 {
     public partial class Form1 : Form
     {
-        protected string connetStr = "server=192.168.52.131;port=3306;user=he;password=123; database=softengineer;";//database 待改
-        protected static string url = "https://www.baidu.com";
+        protected string connetStr = "server=120.79.73.175;port=3306;user=soft;password=123; database=data;";//database 待改
+        //protected static string url = "https://www.baidu.com";
+        protected static string url = "2018-04-08 18:57:53";
 
         public Form1()
         {
@@ -28,12 +29,12 @@ namespace background_manager
             bindListCiew();
         }
 
+        //生成窗口2
         private void button1_Click(object sender, EventArgs e)
         {//link_to_sql_server
 
             Form2 from2 = new Form2();
             from2.Show();
-            //this.Hide();
 
             //MySqlConnection conn = new MySqlConnection(connetStr);
 
@@ -60,6 +61,7 @@ namespace background_manager
 
         }
 
+        //生成二维码
         private void button2_Click(object sender, EventArgs e)
         {
             QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.M);
@@ -79,6 +81,7 @@ namespace background_manager
            
         }
 
+        //查看message表的信息
         private void button3_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(connetStr);
@@ -87,7 +90,7 @@ namespace background_manager
             {
                 conn.Open();//打开通道，建立连接，可能出现异常,使用try catch语句
                 
-                MySqlCommand mycmd = new MySqlCommand("select * from info", conn);
+                MySqlCommand mycmd = new MySqlCommand("select * from message", conn);
                 mycmd.CommandType = CommandType.Text;
                 MySqlDataReader sdr = mycmd.ExecuteReader();
                 int i = 0;
