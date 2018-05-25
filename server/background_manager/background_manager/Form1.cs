@@ -105,8 +105,7 @@ namespace background_manager
                     listView1.Items[i].SubItems.Add(sdr[2].ToString());
                     i++;
 
-                    
-
+                   
                     pre_time = sdr[1].ToString();
 
                 }
@@ -162,7 +161,7 @@ namespace background_manager
                 else
                 {
                     label1.Text = "已选中: " + listView1.SelectedItems[0].SubItems[1].Text + " 的新闻";
-                    url = label1.Text;
+                    url = listView1.SelectedItems[0].SubItems[1].Text;
                 }
             }
         }
@@ -170,6 +169,41 @@ namespace background_manager
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //删除选中新闻
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
+            if (url == "")
+            {
+                label1.Text = "您未选中任何数据！";
+            }
+            else
+            {
+                MySqlConnection conn = new MySqlConnection(connetStr);
+
+                try
+                {
+                    conn.Open();//打开通道，建立连接，可能出现异常,使用try catch语句
+
+                    MySqlCommand mycmd = new MySqlCommand("delete from message where time=\"" + url + "\"", conn);
+                    mycmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    //Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    label1.Text = "删除成功!";
+                    conn.Close();
+                }
+                url = "";
+            }
+
+            
         }
     
     }
