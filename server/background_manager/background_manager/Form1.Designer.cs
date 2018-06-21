@@ -35,7 +35,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,16 +44,16 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(245, 44);
             this.button1.TabIndex = 0;
-            this.button1.Text = "连接数据库插入数据";
+            this.button1.Text = "发布消息";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(183, 167);
+            this.button2.Location = new System.Drawing.Point(39, 172);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 60);
+            this.button2.Size = new System.Drawing.Size(267, 60);
             this.button2.TabIndex = 1;
             this.button2.Text = "生成二维码";
             this.button2.UseVisualStyleBackColor = true;
@@ -100,28 +99,19 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(41, 167);
+            this.button4.Location = new System.Drawing.Point(39, 78);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 60);
             this.button4.TabIndex = 6;
             this.button4.Text = "删除";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(41, 77);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 60);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "修改";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 542);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
@@ -147,7 +137,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
     }
 }
 

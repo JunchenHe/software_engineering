@@ -80,20 +80,35 @@ namespace background_manager
             try
             {
                 conn.Open();//打开通道，建立连接，可能出现异常,使用try catch语句
-                
+
                 MySqlCommand mycmd = new MySqlCommand("select * from message", conn);
                 mycmd.CommandType = CommandType.Text;
                 MySqlDataReader sdr = mycmd.ExecuteReader();
                 int i = 0;
                 listView1.Items.Clear();//清空数据
+
+                string pre_time = null;
                 while (sdr.Read())
                 {
+
+                    if (i == 0)
+                        pre_time = sdr[1].ToString();
+
+                    if (pre_time != sdr[1].ToString())
+                    {
+                        listView1.Items.Add("");
+                        i++;
+                    }
+
                     listView1.Items.Add(sdr[0].ToString());
                     listView1.Items[i].SubItems.Add(sdr[1].ToString());
                     listView1.Items[i].SubItems.Add(sdr[2].ToString());
                     i++;
-                }
 
+                   
+                    pre_time = sdr[1].ToString();
+
+                }
 
             }
             catch (MySqlException ex)
@@ -138,14 +153,57 @@ namespace background_manager
             int selectCount = listView1.SelectedItems.Count; //SelectedItems.Count就是：取得值，表示SelectedItems集合的物件数目。 
             if (selectCount > 0)//若selectCount大於0，说明用户有选中某列。
             {
-                label1.Text = "已选中: "+listView1.SelectedItems[0].SubItems[1].Text+" 的新闻";
-                url = label1.Text;
+
+                if (listView1.SelectedItems[0].SubItems[0].Text=="")
+                {
+                    label1.Text = "无效选择！";
+                }
+                else
+                {
+                    label1.Text = "已选中: " + listView1.SelectedItems[0].SubItems[1].Text + " 的新闻";
+                    url = listView1.SelectedItems[0].SubItems[1].Text;
+                }
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //删除选中新闻
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
+            if (url == "")
+            {
+                label1.Text = "您未选中任何数据！";
+            }
+            else
+            {
+                MySqlConnection conn = new MySqlConnection(connetStr);
+
+                try
+                {
+                    conn.Open();//打开通道，建立连接，可能出现异常,使用try catch语句
+
+                    MySqlCommand mycmd = new MySqlCommand("delete from message where time=\"" + url + "\"", conn);
+                    mycmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    //Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    label1.Text = "删除成功!";
+                    conn.Close();
+                }
+                url = "";
+            }
+
+            
         }
     
     }
